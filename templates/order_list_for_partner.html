@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+{% include "navbar.html" %}
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h2>주문현황</h2>
+      <table class="table">
+        <tr>
+          <!-- <th>이미지</th> -->
+          <th>고객명(아이디)</th>
+          <th>주소</th>
+          <th>메뉴</th>
+          <th>수량</th>
+          <th>가격</th>
+        </tr>
+        {% for order_set in order_set %}
+        <tr>
+          <!-- <td><img style="max-width : 120px;" src="{{ order.image.url }}"></td> -->
+          <td>{{ order_set.order.client.name }}</td>
+          <td>{{ order_set.order.address }}</td>
+          <td>{{ order_set.menu.name }}</td>
+          <td>{{ order_set.count }}</td>
+          <td>{{ order_set.menu.price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

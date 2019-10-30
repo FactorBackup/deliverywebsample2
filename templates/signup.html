@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}회원가입{% endblock %}
+{% block body %}
+{% include "navbar.html" %}
+<br><br>
+<div class="container">
+  <form method="post" action="" class="form-signin">
+    {% csrf_token %}
+    <h2 class="form-signin-heading">회원가입</h2>
+    <input type="text" name="username"
+      class="form-control" placeholder="Username" required="" autofocus="">
+    <input type="email" name="email" class="form-control"
+      placeholder="Email address" required="">
+    <input type="password" name="password" class="form-control"
+      placeholder="Password" required="">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      가입하기
+    </button>
+    {% if is_client %}
+    <div class="text-center">
+      <a href="/partner/signup/">업체용 회원가입 하기</a>
+    </div>
+    {% endif %}
+    {% if is_partner %}
+    <div class="text-center">
+      <a href="/signup/">고객용 회원가입 하기</a>
+    </div>
+    {% endif %}
+
+    <div class="text-center">
+        <a href="/login/">로그인</a>
+    </div>
+    <h4>{{ complete }}</h4>
+    <h4>{{ exist }}</h4>
+    
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+{% include "navbar.html" %}
+{% load client_extras %}
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h2>주문현황</h2>
+      <table class="table">
+        <tr>
+          <!-- <th>이미지</th> -->
+          <th>고객명(아이디)</th>
+          <th>주소</th>
+          <th>메뉴</th>
+          <th>수량</th>
+          <th>가격</th>
+          <th>주문시각</th>
+        </tr>
+        {% for order_set in order_set %}
+        <tr>
+          <td>{{ user.username }}</td>
+          <td>{{ order_set.order.address }}</td>
+          <td>{{ order_set.menu.name }}</td>
+          <td>{{ order_set.count }}</td>
+          <td>{{ order_set.menu.price }}*{{ order_set.count }}</td>
+          <td>{{ order_set.order.created_at }}</td>
+        </tr>
+        {% endfor %}
+        <div class="col-sm-3 col-sm-offset-6">
+          <tr>
+            <td>
+              총결제금액 : {{ sum }}원
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </div>
+{% endblock %}
