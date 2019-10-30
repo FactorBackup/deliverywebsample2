@@ -1,6 +1,6 @@
-# 배달의민족 카피 프로젝트 (웹버전)
+# Baemin copy webversion
 
-- django로 배달의민족 서비스를 웹버전으로 카피하여, 그룹별 회원관리, 메뉴등록, 주문기능을 구현한 프로젝트입니다.
+- django로 배달의민족 서비스를 웹버전으로 카피 그룹별 회원관리, 메뉴등록, 주문기능을 구현함
 
 
 
@@ -15,7 +15,7 @@
 - client(고객용) 주문 페이지
 
 <br><br>
-[데모 홈페이지(이동)](http://baeminsite-dev.ap-northeast-2.elasticbeanstalk.com/)
+neopmank
 
 
 ---
